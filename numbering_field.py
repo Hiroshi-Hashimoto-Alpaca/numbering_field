@@ -1,0 +1,26 @@
+#!/usr/bin/python
+import sys
+import re
+
+args=sys.argargs=sys.argv
+f = open(args[1])
+data = f.read()
+f.close()
+
+i = 1 
+pattern = "(.*=\s*)([0-9]+)(.*)"
+r = re.compile(pattern)
+
+data=data.replace("=\n", "=");
+
+for line in data.split('\n'):
+  m = r.match(line)
+  if (m):
+    print (m.group(1) + `i` + m.group(3))
+    i+=1
+  else:
+    print(line)
+
+  if (re.match('^message', line)):
+    i=1
+
