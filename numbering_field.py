@@ -7,7 +7,7 @@ f = open(args[1])
 data = f.read()
 f.close()
 
-i = 1 
+i = 1
 pattern = "(.*=\s*)([0-9]+)(.*)"
 r = re.compile(pattern)
 
