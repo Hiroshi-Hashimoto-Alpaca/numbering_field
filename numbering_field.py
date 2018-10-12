@@ -2,7 +2,7 @@
 import sys
 import re
 
-args=sys.argv
+args = sys.argv
 f = open(args[1])
 data = f.read()
 f.close()
