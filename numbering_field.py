@@ -16,7 +16,7 @@ data = data.replace("=\n", "=")
 for line in data.split('\n'):
     m = r.match(line)
     if (m):
-        print (m.group(1) + `i` + m.group(3))
+        print (m.group(1) + repr(i) + m.group(3))
         i+=1
     else:
         print(line)
