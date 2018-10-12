@@ -14,13 +14,13 @@ r = re.compile(pattern)
 data = data.replace("=\n", "=")
 
 for line in data.split('\n'):
-  m = r.match(line)
-  if (m):
-    print (m.group(1) + `i` + m.group(3))
-    i+=1
-  else:
-    print(line)
+    m = r.match(line)
+    if (m):
+        print (m.group(1) + `i` + m.group(3))
+        i+=1
+    else:
+        print(line)
 
-  if (re.match('^message', line)):
-    i=1
+    if (re.match('^message', line)):
+        i=1
 
