@@ -11,7 +11,7 @@ i = 1
 pattern = "(.*=[ \t\n\r\f\v]*)([0-9]+)(.*)"
 r = re.compile(pattern)
 
-data=data.replace("=\n", "=");
+data = data.replace("=\n", "=");
 
 for line in data.split('\n'):
   m = r.match(line)
