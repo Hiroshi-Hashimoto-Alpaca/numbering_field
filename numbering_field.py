@@ -23,4 +23,3 @@ for line in data.split('\n'):
 
     if (re.match('^message', line)):
         i = 1
-
