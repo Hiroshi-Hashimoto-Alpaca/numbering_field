@@ -8,7 +8,7 @@ data = f.read()
 f.close()
 
 i = 1
-pattern = "(.*=\s*)([0-9]+)(.*)"
+pattern = "(.*=[ \t\n\r\f\v]*)([0-9]+)(.*)"
 r = re.compile(pattern)
 
 data=data.replace("=\n", "=");
