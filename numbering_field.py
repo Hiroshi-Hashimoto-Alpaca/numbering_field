@@ -17,10 +17,10 @@ for line in data.split('\n'):
     m = r.match(line)
     if (m):
         print (m.group(1) + repr(i) + m.group(3))
-        i+=1
+        i += 1
     else:
         print(line)
 
     if (re.match('^message', line)):
-        i=1
+        i = 1
 
