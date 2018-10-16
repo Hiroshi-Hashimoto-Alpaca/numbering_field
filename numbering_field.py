@@ -3,7 +3,12 @@ import sys
 import re
 
 args = sys.argv
-f = open(args[1])
+replase = False
+if ("-i" in args):
+    replase = True
+    args.remove("-i")
+
+f = open(args[1], 'r')
 data = f.read()
 f.close()
 
@@ -13,13 +18,23 @@ r = re.compile(pattern)
 
 data = data.replace("=\n", "=")
 
+if (replase):
+    f = open(args[1], 'w')
+
 for line in data.split('\n'):
     m = r.match(line)
     if (m):
-        print (m.group(1) + repr(i) + m.group(3))
+        if (replase):
+            f.write(m.group(1) + repr(i) + m.group(3) + '\n')
+        else:
+            print (m.group(1) + repr(i) + m.group(3))
+
         i += 1
     else:
-        print(line)
+        if (replase):
+            f.write(line + '\n')
+        else:
+            print(line)
 
     if (re.match('^message', line)):
         i = 1
