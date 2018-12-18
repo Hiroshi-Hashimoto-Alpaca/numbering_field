@@ -36,5 +36,5 @@ for line in data.split('\n'):
         else:
             print(line)
 
-    if (re.match('^message', line)):
+    if (re.match('^\s*message', line)):
         i = 1
