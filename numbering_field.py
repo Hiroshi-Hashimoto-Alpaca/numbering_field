@@ -38,3 +38,5 @@ for line in data.split('\n'):
 
     if (re.match('^\s*message', line)):
         i = 1
+    elif (re.match('^\s*enum', line)):
+        i = 0
